@@ -1,12 +1,9 @@
 <template>
-<div class="answer">
-  <p class="entry entry1"></p>
-  <p class="entry entry2"></p>
-  <p class="entry entry3"></p>
-  <p class="entry entry4"></p>
-  <p class="entry entry5"></p>
-  <p class="entry entry6"></p>
-</div>
+  <div class="answer">
+    <p class="entry">
+      item
+    </p>
+  </div>
 </template>
 
 <script>
@@ -17,27 +14,21 @@ export default {
 
 <style>
 .answer {
+  /* background: rgba(170, 170, 170, 0.7); */
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  min-height: auto;
-  display: block;
-}
-
-.entry {
-  color: white;
-  height: 50px;
+  border-top: 0.5px solid white;
+  padding: 0.3em;
+  z-index: 10;
+  color: black;
   font-size: 1em;
   font-family: "Lato", sans-serif;
-}
-
-.answer {
-  padding-left: 1em;
-  padding-top: 1em;
-  padding-right: 0.5em;
+  text-transform: uppercase;
+  text-align: justify;
 }
 
 .entry {
-  padding-bottom: 0.5em;
+  height: auto;
+  max-width: 70%;
 }
 </style>

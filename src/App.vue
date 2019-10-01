@@ -23,10 +23,11 @@ export default {
   margin: 0;
   padding: 0;
   font-family: "Archivo", sans-serif;
+  border-radius: 2px;
 }
 
 body {
-  background-color: #b4b4b4;
+  background-color: #ececec;
   display: flex;
   align-content: center;
   height: 100vh;

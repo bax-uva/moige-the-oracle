@@ -1,32 +1,36 @@
 <template>
-<div class="main">
-  <div class="margin left-margin">
-    <div class="inner-left"></div>
-  </div>
-  <div class="oracle-area">
-    <div class="inner-oracle-area">
-      <Question />
-      <Answer />
+  <div class="main">
+    <div class="margin left-margin">
+      <div class="inner-left"></div>
+    </div>
+    <div class="oracle-area">
+      <div class="inner-oracle-area">
+        <Question v-if="!active" />
+        <Answer v-for="item in data.outfit" v-if="active" />
+        <p v-if="active">play again</p>
+      </div>
+    </div>
+    <div class="margin right-margin">
+      <div class="inner-right"></div>
     </div>
   </div>
-  <div class="margin right-margin">
-    <div class="inner-right"></div>
-  </div>
-</div>
 </template>
 
 <script>
 import Question from "./Question.vue";
 import Answer from "./Answer.vue";
-
+import data from "../data/data.js";
 export default {
   name: "Oracle",
-  props: {
-    msg: String
-  },
   components: {
     Question,
     Answer
+  },
+  data() {
+    return {
+      data,
+      active: true
+    };
   }
 };
 </script>
@@ -37,56 +41,66 @@ export default {
   display: flex;
   padding-top: 2em;
   height: 50vh;
+  z-index: 0;
 }
 
 .margin {
   width: 2em;
   height: 50vh;
+  z-index: 0;
 }
 
 .left-margin {
-  background-color: #ff8f64e3;
+  background: rgba(80, 200, 255, 0.9);
+  z-index: 0;
 }
 
 .inner-left {
   width: 100%;
   height: 50vh;
-  background: rgba(80, 200, 255, 0.6);
+  background-color: rgba(255, 143, 100, 0.7);
   transform: rotate(-6deg);
   position: relative;
   top: 0px;
   left: 10px;
+  z-index: 0;
 }
 
 .right-margin {
-  background-color: #590059;
+  background-color: rgba(70, 0, 51, 0.8);
+  z-index: 0;
 }
 
 .inner-right {
   width: 100%;
   height: 50vh;
-  background: rgba(255, 255, 0, 0.5);
-  transform: rotate(3deg);
+  background: rgba(255, 255, 0, 0.6);
+  transform: rotate(2deg);
   position: relative;
-  top: 8px;
+  top: 15px;
+  left: -2px;
+  z-index: 0;
 }
 
 .oracle-area {
-  background-color: #40d086;
+  background: rgba(208, 64, 138, 0.6);
   width: 100%;
-
+  z-index: 0;
 }
 
 .inner-oracle-area {
-  width: 100%;
+  padding: 0 2em 0 1em;
+  width: 102%;
   height: 50vh;
-  background: rgba(255, 0, 255, 0.5);
-  transform: rotate(3deg);
+  background-color: rgba(64, 208, 134, 0.4);
+  transform: rotate(4deg);
   position: relative;
-  top: 5px;
-  left: 0px;
+  top: -8px;
+  left: 8px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  z-index: 4;
 }
 
 @media screen and (min-width: 450px) {
@@ -94,6 +108,4 @@ export default {
     width: 30%;
   }
 }
-
-@media screen and (min-width: 800px) {}
 </style>
