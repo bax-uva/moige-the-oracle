@@ -1,14 +1,14 @@
 <template>
-  <div class="answer">
-    <p class="entry">
-      item
-    </p>
-  </div>
+<div class="answer">
+  <p class="entry">
+    item
+  </p>
+</div>
 </template>
 
 <script>
 export default {
-  name: "Answer"
+  name: "Results"
 };
 </script>
 

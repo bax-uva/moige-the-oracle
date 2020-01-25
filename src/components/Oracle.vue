@@ -1,30 +1,34 @@
 <template>
-  <div class="main">
-    <div class="margin left-margin">
-      <div class="inner-left"></div>
-    </div>
-    <div class="oracle-area">
-      <div class="inner-oracle-area">
-        <Question v-if="!active" />
-        <Answer v-for="item in data.outfit" v-if="active" />
-        <p v-if="active">play again</p>
+  <div>
+    <div class="main">
+      <div class="margin left-margin">
+        <div class="inner-left"></div>
+      </div>
+      <div class="oracle-area">
+        <div class="inner-oracle-area">
+          <Header />
+          <Results v-for="item in data.outfit" v-if="active" />
+        </div>
+      </div>
+      <div class="margin right-margin">
+        <div class="inner-right"></div>
       </div>
     </div>
-    <div class="margin right-margin">
-      <div class="inner-right"></div>
-    </div>
+    <Reset />
   </div>
 </template>
 
 <script>
-import Question from "./Question.vue";
-import Answer from "./Answer.vue";
+import Header from "./Header.vue";
+import Results from "./Results.vue";
+import Reset from "./Reset.vue";
 import data from "../data/data.js";
 export default {
   name: "Oracle",
   components: {
-    Question,
-    Answer
+    Header,
+    Results,
+    Reset
   },
   data() {
     return {
@@ -40,8 +44,9 @@ export default {
   width: 100%;
   display: flex;
   padding-top: 2em;
-  height: 50vh;
+  height: 100vh;
   z-index: 0;
+  flex-grow: 1;
 }
 
 .margin {
@@ -91,7 +96,7 @@ export default {
 .inner-oracle-area {
   padding: 0 2em 0 1em;
   width: 102%;
-  height: 50vh;
+  height: 100vh;
   background-color: rgba(64, 208, 134, 0.4);
   transform: rotate(4deg);
   position: relative;
