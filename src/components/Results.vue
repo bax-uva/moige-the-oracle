@@ -20,7 +20,7 @@ export default {
   /* background: rgba(170, 170, 170, 0.7); */
   display: flex;
   justify-content: space-between;
-  border-top: 0.5px solid white;
+  border-bottom: 0.5px solid white;
   padding: 0.3em;
   z-index: 10;
   color: black;

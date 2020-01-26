@@ -1,23 +1,23 @@
 <template>
-<div>
-  <div class="main">
-    <div class="margin left-margin">
-      <div class="inner-left"></div>
-    </div>
-    <div class="oracle-area">
-      <div class="inner-oracle-area">
-        <Header />
-        <div class="answer">
-          <Results v-for="item in data.outfits" v-bind:item="item" />
+  <div>
+    <div class="main">
+      <div class="margin left-margin">
+        <div class="inner-left"></div>
+      </div>
+      <div class="oracle-area">
+        <div class="inner-oracle-area">
+          <Header />
+          <div class="answer">
+            <Results v-for="item in data.outfits" v-bind:item="item" />
+          </div>
         </div>
       </div>
+      <div class="margin right-margin">
+        <div class="inner-right"></div>
+      </div>
     </div>
-    <div class="margin right-margin">
-      <div class="inner-right"></div>
-    </div>
+    <Reset v-if="5 / 5 == 2" />
   </div>
-  <Reset />
-</div>
 </template>
 
 <script>

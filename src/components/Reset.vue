@@ -1,7 +1,7 @@
 <template>
-<footer class="reset-button">
-  <h3>Play again</h3>
-</footer>
+  <footer class="reset-button">
+    <h3>Play again</h3>
+  </footer>
 </template>
 
 <script>
@@ -21,5 +21,6 @@ export default {
   height: 50px;
 }
 
-@media screen and (min-width: 450px) {}
+@media screen and (min-width: 450px) {
+}
 </style>
