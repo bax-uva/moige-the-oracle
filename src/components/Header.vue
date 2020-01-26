@@ -1,7 +1,7 @@
 <template>
-<div class="question">
-  <h1>What should I wear?</h1>
-</div>
+  <div class="question">
+    <h1>What should I wear?</h1>
+  </div>
 </template>
 
 <script>

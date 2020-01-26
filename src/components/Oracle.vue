@@ -8,7 +8,11 @@
         <div class="inner-oracle-area">
           <Header />
           <div class="answer">
-            <Results v-for="item in data.outfits" v-bind:item="item" />
+            <Results
+              v-for="item in data.outfits"
+              v-bind:key="item"
+              v-bind:item="item"
+            />
           </div>
         </div>
       </div>
