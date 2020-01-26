@@ -1,5 +1,5 @@
 const data = {
-  outfit: {
+  outfits: {
     head: [
       "wig",
       "hat",

@@ -1,21 +1,23 @@
 <template>
-  <div>
-    <div class="main">
-      <div class="margin left-margin">
-        <div class="inner-left"></div>
-      </div>
-      <div class="oracle-area">
-        <div class="inner-oracle-area">
-          <Header />
-          <Results v-for="item in data.outfit" v-if="active" />
+<div>
+  <div class="main">
+    <div class="margin left-margin">
+      <div class="inner-left"></div>
+    </div>
+    <div class="oracle-area">
+      <div class="inner-oracle-area">
+        <Header />
+        <div class="answer">
+          <Results v-for="item in data.outfits" v-bind:item="item" />
         </div>
       </div>
-      <div class="margin right-margin">
-        <div class="inner-right"></div>
-      </div>
     </div>
-    <Reset />
+    <div class="margin right-margin">
+      <div class="inner-right"></div>
+    </div>
   </div>
+  <Reset />
+</div>
 </template>
 
 <script>
@@ -32,9 +34,11 @@ export default {
   },
   data() {
     return {
-      data,
-      active: true
+      data
     };
+  },
+  props: {
+    item: String
   }
 };
 </script>

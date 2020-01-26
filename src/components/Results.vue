@@ -1,19 +1,22 @@
 <template>
-<div class="answer">
   <p class="entry">
-    item
+    {{ item[[Math.floor(Math.random() * item.length)]] }}
   </p>
-</div>
 </template>
 
 <script>
 export default {
-  name: "Results"
+  name: "Results",
+  props: ["item"]
 };
 </script>
 
 <style>
 .answer {
+  margin-top: 3em;
+}
+
+.answer p {
   /* background: rgba(170, 170, 170, 0.7); */
   display: flex;
   justify-content: space-between;
@@ -24,11 +27,5 @@ export default {
   font-size: 1em;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
-  text-align: justify;
-}
-
-.entry {
-  height: auto;
-  max-width: 70%;
 }
 </style>
